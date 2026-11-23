@@ -1,17 +1,19 @@
 var ballx = 300;
 var bally = 300;
-var ballSize = 40;
+var ballSize = 50;
 var score =0;
 var gameState= "L1";
 var img;
 var img2;
+var img3;
 
 function preload() {
 // preload() runs once, it may make you wait
 //  img = loadImage('cat.jpg');  // cat.jpg needs to be next to this .js file
 // you can link to an image on your github account
-  img2 = loadImage('https://davidgerolaga.github.io/swing2.gif');
-    img = loadImage('https://davidgerolaga.github.io/swinging.png');
+  img = loadImage('kirby_sleep.png');
+  img2 = loadImage('kriby.png');
+  img3 = loadImage('kirby_watermelon.png');
 }
 
 
@@ -52,7 +54,7 @@ function levelOne(){
     score= score +1;
   }
   if(score>5){
-// call level 2
+ // call level 2
  // fill(random(255));
  gameState= "L2";
   }
@@ -72,13 +74,13 @@ function levelTwo(){
     score= score +1;
   }
   if(score>10){
-// lvel 3
+  // lvel 3  
    gameState = "L3";
 
   }
   
 //  line(ballx, bally, mouseX, mouseY);
-  square(ballx, bally, ballSize, ballSize);
+  ellipse(ballx, bally, ballSize, ballSize);
 } // end level two
 
 function levelThree(){
@@ -106,5 +108,5 @@ function levelThree(){
 
 function youWin(){
 background(img);
-  text(("you are a wiener"));
+  text(("you are a wiener!"));
 }
